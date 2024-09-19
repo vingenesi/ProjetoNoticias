@@ -1,0 +1,46 @@
+/* fonte */
+
+@import url('https://fonts.googleapis.com/css2?family=Kavoon&display=swap');
+
+:root {
+    --cor-principal: #DF2E38;
+    --cor-secundaria: #FFFFFF;
+    --cor-card: #C7E8CA;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Kavoon", serif;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--cor-principal);
+    color: var(--cor-secundaria);
+    width: 100%;
+    position: fixed;
+    padding: 1rem 1rem;
+}
+
+.menu ul {
+    display: flex;
+}
+.menu li {
+    list-style: none;
+    padding: 1rem;
+}
+.menu a {
+    text-decoration: none;
+    color: var(--cor-secundaria);
+}
+nav a:hover {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-principal);
+    padding: 1rem;
+    transition: 0.5s;
+    border-radius: 0.5rem;
+}
