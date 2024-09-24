@@ -29,6 +29,77 @@ nav {
     padding: 1rem 1rem;
 }
 
+.menu-responsivo {
+    height: 100% ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#checkbox-menu {
+    position: absolute;
+    z-index: 1100;
+    height: 22px;
+    width: 30px;
+    opacity: 0;
+    cursor: pointer;
+}
+#checkbox-menu:checked ~ .linhas{
+    background-color: #DF2E38;
+}
+
+label {
+    cursor: pointer;
+    position: relative;
+    display: block;
+    z-index: 999;
+    height: 22px;
+    width: 30px;
+}
+label span {
+    position: absolute;
+    display: block;
+    height: 5px;
+    width: 100%;
+    border-radius:30px;
+    background-color: var(--cor-secundaria);
+    transition: 0.25s ease-in-out;
+}
+
+#checkbox-menu:checked ~ label span:nth-child(1) {
+    transform: rotate(45deg) ;
+}
+#checkbox-menu:checked ~ label span:nth-child(2) {
+    opacity: 0;
+}
+#checkbox-menu:checked ~ label span:nth-child(3) {
+    transform: rotate(-45deg) ;
+}
+.menu-responsivo ul {
+    position: absolute;
+    z-index: 998;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    padding-top: 3rem;
+    width: 250px;
+    background-color: #DF2E38;
+    margin-right: -300px;
+}
+
+#checkbox-menu:checked ~ ul {
+    margin-right: 0;
+    transition: all ease .2s;
+}
+.menu-responsivo ul li {
+padding: 10px 30px;
+}
+.menu-responsivo ul li a {
+    text-decoration: none;
+    font-size: large;
+    color: #dbdbdb;
+}
+
 main {
     margin: 6rem auto 1rem;
 }
@@ -109,4 +180,53 @@ footer {
 footer h3 {
     font-family: serif;
     color: rgb(206, 206, 206);
+}
+
+/* responsividade */
+
+@media (max-width: 25rem) { /* 0 até 400px */
+    nav {
+        padding: 0.5rem 1rem;
+    }
+    
+    .menu {
+        display: none;
+    }
+
+    .menu-responsivo {
+        display: block;
+    }
+}
+
+/* SM Small - smartphone landscape (paisagem) */
+@media (min-width: 25rem) { /* a partir de 400px */
+    nav {
+        padding: 0.5rem 1rem;
+    }
+    
+    .menu {
+        display: none;
+    }
+
+    .menu-responsivo {
+        display: block;
+    }
+}
+
+/* Tablet */
+@media (min-width: 36rem) { /* a partir 576px */
+    nav {
+        padding: 0.5rem 2rem;
+    }
+}
+
+/* Notebook */
+@media (min-width: 48rem) /*and (max-width: 62rem)*/ { /* a partir 768px */
+    .menu {
+        display: block;
+    }
+
+    .menu-responsivo {
+        display: none;
+    }
 }
